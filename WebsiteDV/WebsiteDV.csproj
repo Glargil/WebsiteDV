@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="LibraryDV">
+      <HintPath>..\..\LibraryDV\LibraryDV\LibraryDV\bin\Debug\net8.0\LibraryDV.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
