@@ -1,3 +1,5 @@
+using LibraryDV.Services;
+
 namespace WebsiteDV
 {
     public class Program
@@ -8,6 +10,8 @@ namespace WebsiteDV
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+            builder.Services.AddSingleton<LibraryDV.Repos.IAnimalRepo, LibraryDV.Repos.AnimalRepo>(); 
+            builder.Services.AddSingleton<AnimalService>();
 
             var app = builder.Build();
 

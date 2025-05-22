@@ -1,5 +1,6 @@
 ﻿@page
 @model WebsiteDV.Pages.AnimalsModel
+@using System.Diagnostics
 
 <!DOCTYPE html>
 <html lang="da">
@@ -11,7 +12,15 @@
 </head>
 
 <body>
-    @foreach (var animal in Model.Animals)
+    <p>ANIMALSANIMALSANIMALS</p>
+    
+    
+    @if (Model.Animals == null || !Model.Animals.Any())
+    {
+        <p>No animals found.</p>
+    }
+    else
+    foreach (var animal in Model.Animals)
     {
         <div class="container">
             <div class="card">
