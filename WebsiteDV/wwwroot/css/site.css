@@ -12,10 +12,17 @@ html {
     text-align: center;
 }
 
-#loginBtn{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding-left: 1em;
-    padding-bottom: 1em;
+#typed {
+    text-align: center;
+    margin-top: 10px;
+    height: 20px;
+}
+
+.TitleIMG {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+    align-content: center;
+    display: flex;
 }

@@ -1,12 +1,14 @@
 ﻿@page
 @model WebsiteDV.Pages.IndexModel
 @{
-	ViewData["Title"] = "Dyre Værnet";
+	ViewData["Title"] = "Dyreværnet";
 }
 <body>
-    <div class="container">
-        <h1 id="index_title">BLOG POSTS GO HERE</h1>
-        @* C# loop for creating a table row for each meeting room *@
+	<div class="container">
+		<img class="TitleIMG" src="~/media/Logo.png">
+		<h1 id="index_title">BLOG POSTS GO HERE</h1>
+		<p id="typed" class="colored">Fra hjemløs til hjertevarm - Hver pote tæller</p>
+		@* C# loop for creating a table row for each meeting room *@
 		@foreach (var blogPost in Model.BlogPosts)
 		{
 			<div class="card card-body">
@@ -14,5 +16,9 @@
 				<p class="card-text">@blogPost.Text</p>
 			</div>
 		}
-    </div>
+	</div>
+
+
+	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+	<script src="~/js/site.js"></script>
 </body>
