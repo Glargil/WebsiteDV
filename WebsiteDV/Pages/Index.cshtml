@@ -5,6 +5,17 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">BLOG POSTS GO HERE</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <body>
+        <h1 class="display-4">BLOG POSTS GO HERE</h1>
+        <container>
+            @foreach(var blogPost in Model.BlogPosts)
+            {
+                <div class="card-body">
+                    <h3 class="card-title">@blogPost.Title</h3>
+                    <p class="card-text">@blogPost.Text</p>
+                </div>
+            }
+        </container>
+        <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </body>
 </div>
