@@ -30,7 +30,7 @@
                     <div class="card-body">
 
                             <p>
-                                <img src="media/@animal.ImgPath" alt="@animal.Name" style="width:350px;height:300px;" />
+                                <img src="media/@animal.ImgPath" alt="@animal.Name" style="width:350px;height:300px;" id="animal-img"/>
                             </p>
 
                         <h5 class="card-title">
@@ -69,62 +69,4 @@
         </div>
     }
 </body>
-</html>        using Microsoft.AspNetCore.Mvc;
-        using Microsoft.AspNetCore.Mvc.RazorPages;
-        using System.Collections.Generic;
-        using System.Linq;
-
-        namespace WebsiteDV.Pages
-        {
-            public class AnimalsModel : PageModel
-            {
-                public List<Animal> Animals { get; set; } = new();
-                [BindProperty]
-                public string SelectedType { get; set; }
-
-                public void OnGet()
-                {
-                    Animals = GetAllAnimals();
-                }
-
-                public void OnPost()
-                {
-                    if (!string.IsNullOrEmpty(SelectedType))
-                    {
-                        Animals = FilterAnimalsByType(SelectedType);
-                    }
-                    else
-                    {
-                        Animals = GetAllAnimals();
-                    }
-                }
-
-                // Example method to get all animals
-                private List<Animal> GetAllAnimals()
-                {
-                    // Replace with your actual data source
-                    return new List<Animal>
-                    {
-                        new Animal { Name = "Fido", Race = "Labrador", Gender = 'M', Weight = 30, Description = "Friendly dog", ImgPath = "dog1.jpg", Type = "Dog" },
-                        new Animal { Name = "Whiskers", Race = "Siamese", Gender = 'F', Weight = 5, Description = "Curious cat", ImgPath = "cat1.jpg", Type = "Cat" }
-                    };
-                }
-
-                // Filter method
-                public List<Animal> FilterAnimalsByType(string type)
-                {
-                    return GetAllAnimals().Where(a => a.Type == type).ToList();
-                }
-            }
-
-            public class Animal
-            {
-                public string Name { get; set; }
-                public string Race { get; set; }
-                public char Gender { get; set; }
-                public double Weight { get; set; }
-                public string Description { get; set; }
-                public string ImgPath { get; set; }
-                public string Type { get; set; }
-            }
-        }
+</html>
