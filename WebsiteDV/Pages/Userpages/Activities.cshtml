@@ -1,4 +1,4 @@
-﻿
+
 @page
 @model WebsiteDV.Pages.Userpages.ActivitiesModel
 @{
@@ -12,6 +12,18 @@
     <link rel="stylesheet" href="~/css/StyleSheet.css" />
 </head>
 
-<body>
-
+<body class="text-center">
+    <h1>Aktiviteter</h1>
+    <div class="row row-cols-1 row-cols-lg-2">
+        @foreach(LibraryDV.Models.Activity activity in Model.Activities)
+        {
+            <div class="col">
+                <div class="card m-1">
+                    <h3 class="card-title">@activity.ActivityTitle</h3>
+                    <i class="card-header">@activity.Date kl. @activity.StartHour:00 til @activity.EndHour:00</i>
+                    <p class="card-text">@activity.Text</p>
+                </div>
+            </div>
+        }
+    </div>
 </body>
