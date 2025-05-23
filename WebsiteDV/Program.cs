@@ -1,4 +1,5 @@
 using LibraryDV.Services;
+using LibraryDV.Repos;
 
 namespace WebsiteDV
 {
@@ -10,8 +11,16 @@ namespace WebsiteDV
 
             // Add services to the container.
             builder.Services.AddRazorPages();
-            builder.Services.AddSingleton<LibraryDV.Repos.IAnimalRepo, LibraryDV.Repos.AnimalRepo>(); 
+            builder.Services.AddSingleton<IAnimalRepo, AnimalRepo>(); 
             builder.Services.AddSingleton<AnimalService>();
+            builder.Services.AddSingleton<IActivityRepo, ActivityRepo>();
+            builder.Services.AddSingleton<ActivityService>();
+            builder.Services.AddSingleton<IBlogPostRepo, BlogPostRepo>();
+            builder.Services.AddSingleton<BlogPostService>();
+            builder.Services.AddSingleton<IBookingRepo, BookingRepo>();
+            builder.Services.AddSingleton<BookingService>();
+            builder.Services.AddSingleton<IUserRepo, UserRepo>();
+            builder.Services.AddSingleton<UserServices>();
 
             var app = builder.Build();
 
