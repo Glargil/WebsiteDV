@@ -28,7 +28,34 @@
                     <div class="card-body">
                         <h5 class="card-title">Navn: @animal.Name</h5>
                         <p class="card-text">
-                        <p class="card-text">Vægt: @animal.Weight<br />
+
+                            <p class="card-text">
+                                @animal.Description<br />
+                            </p>
+
+                            <p class="card-text">
+                                Race: @animal.Race<br />
+                            </p>
+
+                            <p class="card-text">
+                                Køn: 
+                                @if (animal.Gender == 'M')
+                                {
+                                        <img src="media/M.png" alt="Male" style="width:32px;height:32px;" />
+                                }
+                                else if (animal.Gender == 'F')
+                                {   
+                                        <img src="media/F.png" alt="Female" style="width:32px;height:32px;" />    
+                                }
+                                <br />
+                            </p>
+
+                            <p class="card-text">
+                                Vægt: @animal.Weight<br />
+                            </p>
+
+                        <p class="card-text">
+                            Vægt: @animal.Weight<br />
                         </p>
                     </div>
                 </div>
