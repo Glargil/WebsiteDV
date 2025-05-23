@@ -11,3 +11,9 @@ html {
 #index_title{
     text-align: center;
 }
+
+#loginBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
