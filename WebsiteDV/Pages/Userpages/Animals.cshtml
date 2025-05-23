@@ -12,11 +12,21 @@
 </head>
 
 <body>
+    <div class="d-flex gap-3">
     <form method="post" asp-page-handler="Filter" name="Filter" id="Filter">
         <label for="filterType" class="control-label">Vis kun Katte: </label>
-        <input class="me-4" asp-for="Type" type="text" id="cat" name="Filter" value="Cat">
-    <button type="submit" class="btn btn-primary">Filtrér</button>
+        <input class="me-4" asp-for="FilterCat" type="checkbox" id="cat" name="FilterCat" value="true">
+        <label for="filterType" class="control-label">Vis kun Hunde: </label>
+        <input class="me-4" asp-for="FilterDog" type="checkbox" id="dog" name="FilterDog" value="true">
+        <button type="submit" class="btn btn-primary">Filtrér</button>
     </form>
+    <form method="post" asp-page-handler="Sort" name="sort" id="Sort">
+        <button type="submit" class="btn btn-primary">Sortér efter vægt</button>
+    </form>
+    <form method="get" name="Reset" id="Reset">
+        <button type="submit" class="btn btn-outline-danger">Nulstil</button>
+    </form>
+    </div>
     @if (Model.Animals == null || !Model.Animals.Any())
     {
         <p>No animals found.</p>
