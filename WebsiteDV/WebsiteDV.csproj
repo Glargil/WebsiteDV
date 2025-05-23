@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="LibraryDV">
       <HintPath>..\..\LibraryDV\LibraryDV\LibraryDV\bin\Debug\net8.0\LibraryDV.dll</HintPath>
     </Reference>

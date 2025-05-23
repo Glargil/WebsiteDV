@@ -11,7 +11,7 @@ namespace WebsiteDV
 
             // Add services to the container.
             builder.Services.AddRazorPages();
-            builder.Services.AddSingleton<IAnimalRepo, AnimalRepo>(); 
+            builder.Services.AddSingleton<IAnimalRepo, AnimalRepo>();
             builder.Services.AddSingleton<AnimalService>();
             builder.Services.AddSingleton<IActivityRepo, ActivityRepo>();
             builder.Services.AddSingleton<ActivityService>();
@@ -22,6 +22,13 @@ namespace WebsiteDV
             builder.Services.AddSingleton<IUserRepo, UserRepo>();
             builder.Services.AddSingleton<UserServices>();
 
+            // Add authentication services
+            builder.Services.AddAuthentication("MyCookieAuth")
+                .AddCookie("MyCookieAuth", options =>
+                {
+                    options.LoginPath = "/Login";
+                });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -29,10 +36,12 @@ namespace WebsiteDV
             {
                 app.UseExceptionHandler("/Error");
             }
+
             app.UseStaticFiles();
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapRazorPages();
