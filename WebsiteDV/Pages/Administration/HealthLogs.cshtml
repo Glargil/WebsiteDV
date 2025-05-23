@@ -1,0 +1,39 @@
+﻿@page
+@model WebsiteDV.Pages.Administration.HealthLogsModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Animals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</head>
+
+<body class="container-fluid text-center align-content-center">
+    <h1>Health Logs</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+        @foreach(var animal in Model.Animals)
+        {
+            <div class="col">
+            <div class="card m-1">
+                <div class="card-body">
+                    <h3 class="card-title">@animal.Name</h3>
+                    @foreach (var logEntry in animal.HealthLogs)
+                    {
+                        @* @if(logEntry.Count == 0)
+                        {
+                            <p>@animal.Name har ikke været til dyrelægen endnu.</p>
+                        } *@
+                        <p class="card-text card-header">@logEntry.Key:</p>
+                        <p class="card-text">@logEntry.Value</p>
+                    }
+                </div>
+            </div>
+            </div>
+        }
+    </div>
+</body>
+</html>
