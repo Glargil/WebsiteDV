@@ -1,5 +1,6 @@
 using LibraryDV.Repos;
 using LibraryDV.Services;
+using LibraryDV.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -11,7 +12,7 @@ namespace WebsiteDV.Pages.Userpages
         private ActivityService _activityService = new ActivityService(_activityRepo);
 
         [BindProperty]
-        public List<Activity> Activitties { get; set; }
+        public List<Activity> Activities { get; set; }
 
         public ActivitiesModel(ActivityService activityService)
         {
@@ -19,7 +20,7 @@ namespace WebsiteDV.Pages.Userpages
         }
         public void OnGet()
         {
-
+            Activities = _activityService.GetAllActivities();
         }
     }
 }
