@@ -13,6 +13,9 @@ namespace WebsiteDV.Pages
         
         [BindProperty]
         public List<Animal> Animals { get; set; }
+
+        public string Type { get; set; }
+
         public AnimalsModel(AnimalService animalService)
         {
             _animalService = animalService;
@@ -21,6 +24,11 @@ namespace WebsiteDV.Pages
         public void OnGet()
         {
             Animals = _animalService.GetAllAnimals();
+        }
+
+        public void OnPostFilter()
+        {
+           Animals = _animalService.FilterAnimalsByType(Type);
         }
     }
 }

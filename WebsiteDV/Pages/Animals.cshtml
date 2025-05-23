@@ -12,9 +12,11 @@
 </head>
 
 <body>
-    <p>ANIMALSANIMALSANIMALS</p>
-    
-    
+    <form method="post" asp-page-handler="Filter" name="Filter" id="Filter">
+        <label for="filterType" class="control-label">Vis kun Katte: </label>
+        <input class="me-4" asp-for="Type" type="text" id="cat" name="Filter" value="Cat">
+    <button type="submit" class="btn btn-primary">Filtrér</button>
+    </form>
     @if (Model.Animals == null || !Model.Animals.Any())
     {
         <p>No animals found.</p>
@@ -26,7 +28,13 @@
             <div class="card">
                 <div class="card__bg">
                     <div class="card-body">
-                        <h5 class="card-title">Navn: @animal.Name</h5>
+
+                            <p>
+                                <img src="media/@animal.ImgPath" alt="@animal.Name" style="width:350px;height:300px;" />
+                            </p>
+
+                        <h5 class="card-title">
+                            Navn: @animal.Name</h5>
                         <p class="card-text">
 
                             <p class="card-text">
@@ -53,9 +61,6 @@
                             <p class="card-text">
                                 Vægt: @animal.Weight<br />
                             </p>
-
-                        <p class="card-text">
-                            Vægt: @animal.Weight<br />
                         </p>
                     </div>
                 </div>
@@ -64,4 +69,62 @@
         </div>
     }
 </body>
-</html>
+</html>        using Microsoft.AspNetCore.Mvc;
+        using Microsoft.AspNetCore.Mvc.RazorPages;
+        using System.Collections.Generic;
+        using System.Linq;
+
+        namespace WebsiteDV.Pages
+        {
+            public class AnimalsModel : PageModel
+            {
+                public List<Animal> Animals { get; set; } = new();
+                [BindProperty]
+                public string SelectedType { get; set; }
+
+                public void OnGet()
+                {
+                    Animals = GetAllAnimals();
+                }
+
+                public void OnPost()
+                {
+                    if (!string.IsNullOrEmpty(SelectedType))
+                    {
+                        Animals = FilterAnimalsByType(SelectedType);
+                    }
+                    else
+                    {
+                        Animals = GetAllAnimals();
+                    }
+                }
+
+                // Example method to get all animals
+                private List<Animal> GetAllAnimals()
+                {
+                    // Replace with your actual data source
+                    return new List<Animal>
+                    {
+                        new Animal { Name = "Fido", Race = "Labrador", Gender = 'M', Weight = 30, Description = "Friendly dog", ImgPath = "dog1.jpg", Type = "Dog" },
+                        new Animal { Name = "Whiskers", Race = "Siamese", Gender = 'F', Weight = 5, Description = "Curious cat", ImgPath = "cat1.jpg", Type = "Cat" }
+                    };
+                }
+
+                // Filter method
+                public List<Animal> FilterAnimalsByType(string type)
+                {
+                    return GetAllAnimals().Where(a => a.Type == type).ToList();
+                }
+            }
+
+            public class Animal
+            {
+                public string Name { get; set; }
+                public string Race { get; set; }
+                public char Gender { get; set; }
+                public double Weight { get; set; }
+                public string Description { get; set; }
+                public string ImgPath { get; set; }
+                public string Type { get; set; }
+            }
+        }
