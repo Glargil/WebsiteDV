@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\media\basse.jpg" />
+    <None Include="wwwroot\media\F.png" />
+    <None Include="wwwroot\media\Garfield.jpg" />
+    <None Include="wwwroot\media\Herman.jpg" />
+    <None Include="wwwroot\media\M.png" />
+    <None Include="wwwroot\media\vita.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="LibraryDV">
       <HintPath>..\..\LibraryDV\LibraryDV\LibraryDV\bin\Debug\net8.0\LibraryDV.dll</HintPath>
     </Reference>
