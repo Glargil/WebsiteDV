@@ -1,10 +1,18 @@
 ﻿@page
-@model IndexModel
+@model WebsiteDV.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+	ViewData["Title"] = "Dyre Værnet";
 }
-
-<div class="text-center">
-    <h1 class="display-4">BLOG POSTS GO HERE</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<body>
+    <div class="container">
+        <h1 id="index_title">BLOG POSTS GO HERE</h1>
+        @* C# loop for creating a table row for each meeting room *@
+		@foreach (var blogPost in Model.BlogPosts)
+		{
+			<div class="card card-body">
+				<h3 class="card-title">@blogPost.Title</h3>
+				<p class="card-text">@blogPost.Text</p>
+			</div>
+		}
+    </div>
+</body>

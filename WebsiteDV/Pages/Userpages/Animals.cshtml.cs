@@ -4,7 +4,7 @@ using LibraryDV.Services;
 using LibraryDV.Models;
 using LibraryDV.Repos;
 
-namespace WebsiteDV.Pages
+namespace WebsiteDV.Pages.Userpages
 {
     public class AnimalsModel : PageModel
     {
