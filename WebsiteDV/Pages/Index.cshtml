@@ -3,21 +3,58 @@
 @{
 	ViewData["Title"] = "Dyreværnet";
 }
-<body>
+<head>
+	<link href="~/css/index.css" rel="stylesheet" />
+</head>
+<body id="main-body">
 	<div class="container">
-		<img class="TitleIMG" src="~/media/Logo.png">
-		<h1 id="index_title">BLOG POSTS GO HERE</h1>
+		<img class="TitleIMG" src="~/media/Logo.png" alt="Dyreværnet logo">
 		<p id="typed" class="colored">Fra hjemløs til hjertevarm - Hver pote tæller</p>
-		@* C# loop for creating a table row for each meeting room *@
-		@foreach (var blogPost in Model.BlogPosts)
-		{
-			<div class="card card-body">
-				<h3 class="card-title">@blogPost.Title</h3>
-				<p class="card-text">@blogPost.Text</p>
+		<div class="jumbotron text-center bg-light p-5 rounded">
+			<h1 id="index_title">Velkommen til Dyreværnet</h1>
+			<p>Vi hjælper hjemløse dyr med at finde nye, kærlige hjem. Læs vores seneste nyheder og bliv en del af fællesskabet!</p>
+		</div>
+		<div id="news-section">
+			<h2>Seneste nyheder</h2>
+			@foreach (var blogPost in Model.BlogPosts)
+			{
+				<div class="card card-body" style="padding: 1em; margin-bottom: 1em;">
+					<h3 class="card-title">@blogPost.Title</h3>
+					<p class="card-text">@blogPost.Text</p>
+				</div>
+			}
+		</div>
+		<div id="adopt-section">
+			<h2>Adopter et dyr</h2>
+			<p>Er du klar til at give et dyr et nyt hjem? <a href="/Userpages/Animals">Se vores dyr til adoption</a>.</p>
+		</div>
+		<!-- Contact Section -->
+		<div class="row mt-5" id="contact-section">
+			<h2 class="text-center w-100">Kontakt Os!</h2>
+			<div class="col-md-6">
+				<p><strong>Adresse:</strong> Islevdalvej 85, 2610 Rødovre, Denmark</p>
+				<p><strong>Telefon:</strong> +45 123 456 789</p>
+				<p><strong>Email:</strong> info@hillerodboats.dk</p>
 			</div>
-		}
+			<div class="col-md-6">
+				<form method="post" action="/Contact">
+					<div class="form-group">
+						<label for="name">Navn</label>
+						<input type="text" class="form-control" id="name" name="name" required>
+					</div>
+					<div class="form-group mt-3">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" id="email" name="email" required>
+					</div>
+					<div class="form-group mt-3">
+						<label for="message">Besked</label>
+						<textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary mt-3">Send Besked</button>
+				</form>
+			</div>
+		</div>
 	</div>
-
 
 	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 	<script src="~/js/site.js"></script>

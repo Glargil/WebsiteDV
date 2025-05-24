@@ -1,0 +1,131 @@
+﻿#main-body {
+    background: #f8fafc;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.TitleIMG {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    max-width: 220px;
+    height: auto;
+}
+
+#typed.colored {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #007BFF;
+    margin-bottom: 2rem;
+}
+
+.jumbotron {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 2rem 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+#index_title {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+#news-section {
+    margin-bottom: 2.5rem;
+}
+
+.card.card-body {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    margin-bottom: 1.2rem;
+    padding: 1.2rem 1rem;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #007BFF;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #333;
+}
+
+#adopt-section {
+    background: #eaf6ff;
+    border-radius: 10px;
+    padding: 1.2rem 1rem;
+    margin-bottom: 2.5rem;
+}
+
+    #adopt-section a {
+        color: #007BFF;
+        text-decoration: underline;
+        font-weight: 500;
+    }
+
+#contact-section {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+    #contact-section > div {
+        flex: 1 1 300px;
+    }
+
+    #contact-section h2 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+.contact-form label {
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    background: #f9f9f9;
+}
+
+.btn.btn-primary,
+.send-btn {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+    .btn.btn-primary:hover,
+    .send-btn:hover {
+        background: #0056b3;
+    }

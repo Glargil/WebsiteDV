@@ -42,7 +42,8 @@ public class LoginModel : PageModel
             new Claim(ClaimTypes.Name, user.Name),
             new Claim(ClaimTypes.Email, user.Email),
             new Claim(ClaimTypes.Role, user.Type.ToString()), // "Admin" or "Employee"
-            new Claim("UserId", user.UserID.ToString())
+            new Claim("UserId", user.UserID.ToString()),
+            new Claim("UserType", user.Type.ToString())
         };
         var claimsIdentity = new ClaimsIdentity(claims, "MyCookieAuth");
         var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);

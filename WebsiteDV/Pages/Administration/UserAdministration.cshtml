@@ -3,35 +3,31 @@
 @attribute [Authorize(Roles = "Admin")]
 @model WebsiteDV.Pages.Administration.UserAdministrationModel
 @{
-    ViewData["Title"] = "User Administration";
+	ViewData["Title"] = "User Administration";
 }
+<head>
+	<link rel="stylesheet" href="~/css/useradmin.css" asp-append-version="true" />
+</head>
+<h2>User Administration</h2>
 
-<h2>Create New User</h2>
-<form method="post">
-    <div>
-        <label>Name:</label>
-        <input asp-for="Name" />
-    </div>
-    <div>
-        <label>Email:</label>
-        <input asp-for="Email" type="email" />
-    </div>
-    <div>
-        <label>Phone Number:</label>
-        <input asp-for="PhoneNumber" />
-    </div>
-    <div>
-        <label>Password:</label>
-        <input asp-for="Password" type="password" />
-    </div>
-    <div>
-        <label>User Type:</label>
-        <select asp-for="UserType">
-            <option value="1">Employee</option>
-            <option value="2">Admin</option>
-        </select>
-    </div>
-    <button type="submit">Create User</button>
-    <div style="color:red">@Model.ErrorMessage</div>
-    <div style="color:green">@Model.SuccessMessage</div>
-</form>
+<div style="display: flex; justify-content: flex-end; margin-bottom: 1.5rem;">
+	<a class="create-user-btn" href="/Administration/CreateUser">+ Create New User</a>
+</div>
+
+<div class="user-cards two-column">
+	@foreach (var user in Model.Users)
+	{
+		<div class="user-card">
+			<p><strong>Name:</strong> @user.Name</p>
+			<p><strong>Email:</strong> @user.Email</p>
+			<p><strong>User Type:</strong> @user.Type</p>
+			<form method="get" action="/Administration/EditUser/@user.UserID" style="display:inline;">
+				<button type="submit">Edit</button>
+			</form>
+			<form method="post" asp-page-handler="Delete" style="display:inline;">
+				<input type="hidden" name="userId" value="@user.UserID" />
+				<button type="submit" onclick="return confirm('Er du sikker på du vil slette denne bruger?');">Delete</button>
+			</form>
+		</div>
+	}
+</div>

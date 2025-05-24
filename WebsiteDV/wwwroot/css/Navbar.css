@@ -22,21 +22,6 @@
     align-content: center;
     padding-left: 1em;
 }
-
-#LoginBtn {
-    position: absolute;
-    width: 85%;
-    bottom: 0;
-    padding-bottom: 1em;
-    margin-top: 290%;
-}
-#LogoutBtn {
-    position: absolute;
-    width: 85%;
-    bottom: 0;
-    padding-bottom: 1em;
-    margin-top: 266%;
-}
    
 
 html {
@@ -82,12 +67,11 @@ body {
     #sideBar > ul > li:first-child {
         display: flex;
         justify-content: flex-end;
-        margin-bottom: 16px;
     }
 
         #sideBar > ul > li:first-child .logo {
             font-weight: 600;
-            padding-top: 0.6rem;
+            margin-top: 0.5rem;
         }
     /*coloring the active page button text and icon(svg) in the navbar. This ensures the user always knows which page they are on*/
     #sideBar ul li.active a {
@@ -194,6 +178,7 @@ main {
 
 
 @media(max-width: 800px) {
+
     /* Ensure the logout button matches the other navbar items */
     #sideBar form {
         position: static; /* Remove absolute positioning */

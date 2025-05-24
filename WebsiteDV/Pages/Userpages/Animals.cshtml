@@ -5,78 +5,63 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <title>Animals</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+	<meta charset="UTF-8">
+	<title>Animals</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="~/css/animals.css" rel="stylesheet" />
 </head>
 
-<body>
-    <div class="d-flex gap-3">
-    <form method="post" asp-page-handler="Filter" name="Filter" id="Filter">
-        <label for="filterType" class="control-label">Vis kun Katte: </label>
-        <input class="me-4" asp-for="FilterCat" type="checkbox" id="cat" name="FilterCat" value="true">
-        <label for="filterType" class="control-label">Vis kun Hunde: </label>
-        <input class="me-4" asp-for="FilterDog" type="checkbox" id="dog" name="FilterDog" value="true">
-        <button type="submit" class="btn btn-primary">Filtrér</button>
-    </form>
-    <form method="post" asp-page-handler="Sort" name="sort" id="Sort">
-        <button type="submit" class="btn btn-primary">Sortér efter vægt</button>
-    </form>
-    <form method="get" name="Reset" id="Reset">
-        <button type="submit" class="btn btn-outline-danger">Nulstil</button>
-    </form>
-    </div>
-    @if (Model.Animals == null || !Model.Animals.Any())
-    {
-        <p>No animals found.</p>
-    }
-    else
-    foreach (var animal in Model.Animals)
-    {
-        <div class="container">
-            <div class="card">
-                <div class="card__bg">
-                    <div class="card-body">
-
-                            <p>
-                                <img src="/media/@animal.ImgPath" alt="@animal.Name" style="width:350px;height:300px;" id="animal-img"/>
-                            </p>
-
-                        <h5 class="card-title">
-                            Navn: @animal.Name</h5>
-                        <p class="card-text">
-
-                            <p class="card-text">
-                                @animal.Description<br />
-                            </p>
-
-                            <p class="card-text">
-                                Race: @animal.Race<br />
-                            </p>
-
-                            <p class="card-text">
-                                Køn: 
-                                @if (animal.Gender == 'M')
-                                {
-                                        <img src="media/M.png" alt="Male" style="width:32px;height:32px;" />
-                                }
-                                else if (animal.Gender == 'F')
-                                {   
-                                        <img src="media/F.png" alt="Female" style="width:32px;height:32px;" />    
-                                }
-                                <br />
-                            </p>
-
-                            <p class="card-text">
-                                Vægt: @animal.Weight<br />
-                            </p>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    }
+<body id="animals-body">
+	<div id="animal-controls">
+		<form method="post" asp-page-handler="Filter" name="Filter" id="filter-form">
+			<label for="cat" class="filter-label">Vis kun Katte: </label>
+			<input class="filter-checkbox" asp-for="FilterCat" type="checkbox" id="cat" name="FilterCat" value="true">
+			<label for="dog" class="filter-label">Vis kun Hunde: </label>
+			<input class="filter-checkbox" asp-for="FilterDog" type="checkbox" id="dog" name="FilterDog" value="true">
+			<button type="submit" class="filter-btn">Filtrér</button>
+		</form>
+		<form method="post" asp-page-handler="Sort" name="sort" id="sort-form">
+			<button type="submit" class="sort-btn">Sortér efter vægt</button>
+		</form>
+		<form method="get" name="Reset" id="reset-form">
+			<button type="submit" class="reset-btn">Nulstil</button>
+		</form>
+	</div>
+	@if (Model.Animals == null || !Model.Animals.Any())
+	{
+		<p id="no-animals-msg">Ingen dyr fundet.</p>
+	}
+	else
+	{
+		<div id="animal-list">
+			@foreach (var animal in Model.Animals)
+			{
+				<div class="animal-card">
+					<div class="animal-card-bg">
+						<div class="animal-card-body">
+							<div class="animal-img-wrapper">
+								<img src="/media/@animal.ImgPath" alt="@animal.Name" class="animal-img" />
+							</div>
+							<h5 class="animal-name">Navn: @animal.Name</h5>
+							<p class="animal-gender">
+								Køn:
+								@if (animal.Gender == 'M')
+								{
+									<ion-icon name="female-outline"></ion-icon>
+								}
+								else if (animal.Gender == 'F')
+								{
+									<ion-icon name="male-outline"></ion-icon>
+								}
+							</p>
+							<p class="animal-desc">@animal.Description</p>
+							<p class="animal-race">Race: @animal.Race</p>
+							<p class="animal-weight">Vægt: @animal.Weight</p>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	}
 </body>
 </html>

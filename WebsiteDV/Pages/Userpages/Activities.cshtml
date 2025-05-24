@@ -1,4 +1,3 @@
-
 @page
 @model WebsiteDV.Pages.Userpages.ActivitiesModel
 @{
@@ -6,24 +5,47 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <title>Animals</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+	<meta charset="UTF-8">
+	<title>Aktiviteter | Dyreværnet</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="~/css/activities.css" />
 </head>
 
-<body class="text-center">
-    <h1>Aktiviteter</h1>
-    <div class="row row-cols-1 row-cols-lg-2">
-        @foreach(LibraryDV.Models.Activity activity in Model.Activities)
-        {
-            <div class="col">
-                <div class="card m-1">
-                    <h3 class="card-title">@activity.ActivityTitle</h3>
-                    <i class="card-header">@activity.Date kl. @activity.StartHour:00 til @activity.EndHour:00</i>
-                    <p class="card-text">@activity.Text</p>
-                </div>
-            </div>
-        }
-    </div>
+<body id="activities-body">
+	<section class="activities-header">
+		<h1>Aktiviteter</h1>
+		<p class="activities-intro">
+			Her kan du se kommende arrangementer og aktiviteter hos Dyreværnet. Vi afholder løbende events for både børn og voksne, hvor du kan lære mere om dyrevelfærd, møde vores dyr og støtte vores arbejde.
+		</p>
+	</section>
+	<div id="activities-list" class="row row-cols-1 row-cols-lg-2">
+		@if (Model.Activities == null || !Model.Activities.Any())
+		{
+			<div class="col">
+				<div class="card m-1">
+					<p class="card-text">Ingen aktiviteter fundet.</p>
+				</div>
+			</div>
+		}
+		else
+		{
+			foreach (LibraryDV.Models.Activity activity in Model.Activities)
+			{
+				<div class="col" style="width: 100%;">
+					<div class="card m-1 activity-card">
+						<h3 class="card-title">@activity.ActivityTitle</h3>
+						<div class="activity-meta">
+							<span class="activity-date">@activity.Date.ToString("dd-MM-yyyy")</span>
+							<span class="activity-time">kl. @activity.StartHour:00 - @activity.EndHour:00</span>
+						</div>
+						<p class="card-text">@activity.Text</p>
+					</div>
+				</div>
+			}
+		}
+	</div>
+	<section class="activities-footer">
+		<p>Har du spørgsmål til vores arrangementer? <a href="/Index#contact-section">Kontakt os her</a>.</p>
+	</section>
 </body>
+</html>
