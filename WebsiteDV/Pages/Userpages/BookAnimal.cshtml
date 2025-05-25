@@ -1,0 +1,60 @@
+﻿@page "{animalId:int}"
+@model WebsiteDV.Pages.Userpages.BookAnimalModel
+@{
+    ViewData["Title"] = "Book et besøg";
+}
+<head>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+@if (Model.Animal != null)
+{
+    <section id="bookanimal-section">
+        <div class="animal-details">
+            <img src="/media/@Model.Animal.ImgPath" alt="@Model.Animal.Name" class="animal-details-img" />
+            <h2 class="animal-details-name">@Model.Animal.Name</h2>
+            <p class="animal-details-desc">@Model.Animal.Description</p>
+            <p class="animal-details-weight">Vægt: @Model.Animal.Weight</p>
+            <p class="animal-details-gender">Køn: @(Model.Animal.Gender == 'M' ? "Han" : "Hun")</p>
+        </div>
+        <form method="post" class="bookanimal-form">
+            <input type="hidden" asp-for="AnimalId" />
+            <div class="form-row">
+                <label asp-for="UserEmail" class="form-label">Email:</label>
+                <input asp-for="UserEmail" type="email" class="form-input" required />
+            </div>
+            <div class="form-row">
+                <label asp-for="UserName" class="form-label">Navn:</label>
+                <input asp-for="UserName" class="form-input" required />
+            </div>
+            <div class="form-row">
+                <label asp-for="UserPhone" class="form-label">Telefonnummer:</label>
+                <input asp-for="UserPhone" class="form-input" required />
+            </div>
+            <div class="form-row">
+                <label asp-for="BookingDate" class="form-label">Dato:</label>
+                <input asp-for="BookingDate" type="date" class="form-input" required min="@DateTime.Now.ToString("yyyy-MM-dd")" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+            </div>
+            <div class="form-row">
+                <label asp-for="BookingHour" class="form-label">Tidspunkt (heltal, fx 10):</label>
+                <input asp-for="BookingHour" type="number" min="0" max="23" class="form-input" required />
+            </div>
+            <div class="form-row">
+                <label asp-for="Comment" class="form-label">Kommentar:</label>
+                <textarea asp-for="Comment" class="form-input"></textarea>
+            </div>
+            <button type="submit" class="bookanimal-btn">Book</button>
+            @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+            {
+                <div class="alert alert-success">@Model.SuccessMessage</div>
+            }
+            @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+            {
+                <div class="alert alert-danger">@Model.ErrorMessage</div>
+            }
+        </form>
+    </section>
+}
+else
+{
+    <p class="bookanimal-notfound">Dyret blev ikke fundet.</p>
+}

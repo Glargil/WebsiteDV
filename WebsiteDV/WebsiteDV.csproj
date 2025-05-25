@@ -8,10 +8,8 @@
 
   <ItemGroup>
     <None Include="wwwroot\media\basse.jpg" />
-    <None Include="wwwroot\media\F.png" />
     <None Include="wwwroot\media\Garfield.jpg" />
     <None Include="wwwroot\media\Herman.jpg" />
-    <None Include="wwwroot\media\M.png" />
     <None Include="wwwroot\media\vita.jpg" />
   </ItemGroup>
 
