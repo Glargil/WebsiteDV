@@ -28,6 +28,7 @@ html {
 }
 
 
+/*------------- Booking List --------------*/
 #mybookings-section {
     max-width: 500px;
     margin: 3rem auto 2rem auto;
@@ -128,3 +129,142 @@ html {
     text-align: center;
     font-size: 1.05rem;
 }
+/*------------- End Booking List --------------*/
+
+
+/*-------------- Alert Box ---------------*/
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+/*-------------- Alert Box ---------------*/
+
+/*------------ Create Booking ------------*/
+#bookanimal-section {
+    max-width: 600px;
+    margin: 3rem auto 2rem auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    padding: 2.5rem 2rem 2rem 2rem;
+}
+
+.animal-details {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.animal-details-img {
+    width: 220px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+    margin-bottom: 1rem;
+}
+
+.animal-details-name {
+    font-size: 1.5rem;
+    color: #007BFF;
+    margin-bottom: 0.3rem;
+}
+
+.animal-details-desc {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.animal-details-weight,
+.animal-details-gender {
+    font-size: 1rem;
+    color: #388e3c;
+    margin-bottom: 0.2rem;
+}
+
+.bookanimal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+.form-input {
+    padding: 0.7rem;
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f9f9f9;
+}
+
+.bookanimal-btn {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin-top: 0.5rem;
+}
+
+    .bookanimal-btn:hover {
+        background: #0056b3;
+    }
+
+.bookanimal-error {
+    color: #e74c3c;
+    background: #fff0f0;
+    border: 1px solid #e74c3c;
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.bookanimal-success {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.bookanimal-notfound {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+}
+
+/*---------- End Create Booking ----------*/

@@ -57,6 +57,11 @@
 							<p class="animal-desc">@animal.Description</p>
 							<p class="animal-race">Race: @animal.Race</p>
 							<p class="animal-weight">Vægt: @animal.Weight</p>
+							<form method="get" action="/Userpages/BookAnimal/@animal.AnimalID" style="display:inline;">
+								<input type="hidden" name="animalId" value="@animal.AnimalID" />
+								<button type="submit" class="book-btn">Book tid</button>
+							</form>
+
 						</div>
 					</div>
 				</div>
