@@ -1,0 +1,36 @@
+﻿@page
+@model WebsiteDV.Pages.Administration.CreateActivityModel
+@{
+}
+<div>
+<h2>Create New Activity</h2>
+	<div id="create-form" class="m-1">
+		<form method="post" asp-page-handler="Create">
+			<div>
+				<label>Title:</label>
+				<input asp-for="Title" />
+			</div>
+			<div>
+				<label>Date:</label>
+				<input asp-for="Date" type="date" />
+			</div>
+			<div>
+				<label>Starts at:</label>
+				<input asp-for="StartHour" type="number" />
+			</div>
+			<div>
+				<label>Ends at:</label>
+				<input asp-for="EndHour" type="number" />
+			</div>
+			<div>
+				<label>Text:</label>
+				<input asp-for="Text" type="text" />
+			</div>
+			<button class="btn btn-primary" type="submit" onclick="return confirm('Er du sikker på denne bruger skal oprettes?');">Opret Aktivitet</button>
+			@* <div style="color:red">@Model.ErrorMessage</div>
+			<div style="color:green">@Model.SuccessMessage</div> *@
+			<div style="color:red">@Model.ErrorMessage</div>
+			<div style="color:green">@Model.SuccessMessage</div>
+		</form>
+	</div>
+</div>

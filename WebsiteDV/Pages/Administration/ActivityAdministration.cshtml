@@ -6,58 +6,38 @@
 }
 <head>
     <meta charset="UTF-8">
-    <title>Animals</title>
+    <title>Aktivitetsadministration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/css/activities.css" />
 </head>
-    <h2>Create New Activity</h2>
-    <div id="create-form" class="m-1">
-    <form method="post" asp-page-handler="Create">
-        <div>
-            <label>Title:</label>
-            <input asp-for="Title" />
-        </div>
-        <div>
-            <label>Date:</label>
-            <input asp-for="Date" type="date"/>
-        </div>
-        <div>
-            <label>Starts at:</label>
-            <input asp-for="StartHour" type="number" />
-        </div>
-        <div>
-            <label>Ends at:</label>
-            <input asp-for="EndHour" type="number" />
-        </div>
-        <div>
-            <label>Text:</label>
-            <input asp-for="Text" type="text"/>
-        </div>
-        <button class="btn btn-primary" type="submit">Create Activity</button>
-        @* <div style="color:red">@Model.ErrorMessage</div>
-        <div style="color:green">@Model.SuccessMessage</div> *@
-    </form>
+
+<section id="activityadmin-section">
+    <div class="activityadmin-header">
+        <a class="activityadmin-create-btn" href="/Administration/CreateActivity">+ Opret Aktivitet</a>
     </div>
 
+    <div class="activityadmin-container">
+        <h1 class="activityadmin-title">Dyreværnets Aktiviteter</h1>
+        <div id="activityadmin-list">
+            @foreach (var activity in Model.Activities)
+            {
+                <div class="activityadmin-card">
+                    <div class="activityadmin-card-body">
+                        <p class="activityadmin-card-title">@activity.ActivityTitle</p>
+                        <p class="activityadmin-card-meta">@activity.Date.ToString("dd-MM-yyyy") kl. @activity.StartHour - @activity.EndHour</p>
+                        <div class="activityadmin-card-text">@Html.Raw(activity.Text)</div>
 
-    <div class="container-fluid align-conntent-center">
-        <h1 class="mt-5">Aktiviteter</h1>
-        <div class="row row-cols-2">
-        @foreach (var activity in Model.Activities)
-        {
-            <div class="col">    
-                <div class="card m-1">
-                    <div class="card-body">
-                        <p class="card-title">@activity.ActivityTitle</p>
-                        <p class="card-header">@activity.Date   kl. @activity.StartHour til @activity.EndHour</p>
-                        <p class="card-text">@activity.Text</p>
-                        <form method="post" asp-page-handler="Delete">
-                            <input type="hidden" asp-for="ToDelete" value="@activity.ActivityID"/>
-                            <button class="btn btn-danger" type="submit" onclick="return confirm('Er du sikker på denne aktivitet skal slettes?');" >Delete Activity</button>
+                        <form method="get" action="/Administration/EditActivity" class="activityadmin-edit-form" style=" display:inline;">
+                            <input type="hidden" name="ActivityID" value="@activity.ActivityID" />
+                            <button class="activityadmin-edit-btn" type="submit">Edit</button>
+                        </form>
+                        <form method="post" asp-page-handler="Delete" class="activityadmin-delete-form">
+                            <input type="hidden" asp-for="ToDelete" value="@activity.ActivityID" />
+                            <button class="activityadmin-delete-btn" type="submit" onclick="return confirm('Er du sikker på denne aktivitet skal slettes?');">Slet aktivitet</button>
                         </form>
                     </div>
                 </div>
-            </div>
-        }
+            }
         </div>
     </div>
+</section>

@@ -113,3 +113,119 @@
         .activities-footer a:hover {
             color: #0056b3;
         }
+
+
+/*---------- Activity Administration ----------*/
+#activityadmin-section {
+    max-width: 1100px;
+    margin: 3rem auto 2rem auto;
+    background: #f8fafc;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 2.5rem 2rem 2rem 2rem;
+}
+
+.activityadmin-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.activityadmin-create-btn {
+    background: #007BFF;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.15s;
+}
+
+    .activityadmin-create-btn:hover {
+        background: #0056b3;
+    }
+
+.activityadmin-title {
+    font-size: 2rem;
+    color: #007BFF;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#activityadmin-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.activityadmin-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 1.7rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.2s;
+    min-height: 220px;
+    position: relative;
+}
+
+    .activityadmin-card:hover {
+        box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    }
+
+.activityadmin-card-title {
+    font-size: 1.3rem;
+    color: #007BFF;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.activityadmin-card-meta {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.7rem;
+}
+
+.activityadmin-card-text {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+}
+
+.activityadmin-delete-form, .activityadmin-edit-form {
+    margin-top: auto;
+    width: 100%;
+}
+
+.activityadmin-delete-btn, .activityadmin-edit-btn {
+    background: #f5f5f5;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.2rem;
+    margin-right: 0.5rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.15s;
+
+}
+
+    .activityadmin-delete-btn:hover, .activityadmin-edit-btn:hover {
+        background: #e0e0e0;
+    }
+.activityadmin-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.activityadmin-edit-form,
+.activityadmin-delete-form {
+    margin: 0;
+    width: auto;
+    display: inline;
+}
