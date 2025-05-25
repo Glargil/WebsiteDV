@@ -4,3 +4,53 @@
 @model WebsiteDV.Pages.Administration.BlogPostAdministrationModel
 @{
 }
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Animals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</head>
+
+<body class="m-1">
+    <h2>Create New BlogPost</h2>
+    <div id="create-form" class="m-1">
+        <form method="post" asp-page-handler="Create">
+            <div>
+                <label>Title:</label>
+                <input asp-for="Title" />
+            </div>
+            <div>
+                <label>Text:</label>
+                <input asp-for="Text" type="text" />
+            </div>
+            <button class="btn btn-primary" type="submit">Create BlogPost</button>
+            @* <div style="color:red">@Model.ErrorMessage</div>
+        <div style="color:green">@Model.SuccessMessage</div> *@
+        </form>
+    </div>
+
+
+    <div class="container-fluid align-conntent-center">
+        <h1 class="mt-5">Aktiviteter</h1>
+        <div class="row row-cols-2">
+            @foreach (var blogPost in Model.BlogPosts)
+            {
+                <div class="col">
+                    <div class="card m-1">
+                        <div class="card-body">
+                            <p class="card-title">@blogPost.Title</p>
+                            <p class="card-text">@blogPost.Text</p>
+                            <form method="post" asp-page-handler="Delete">
+                                <input type="hidden" asp-for="ToDelete" value="@blogPost.BlogPostID" />
+                                <button class="btn btn-danger" type="submit" onclick="return confirm('Er du sikker på denne BlogPost skal slettes?');">Delete BlogPost</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
