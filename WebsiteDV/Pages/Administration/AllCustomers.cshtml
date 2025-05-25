@@ -1,0 +1,29 @@
+﻿@page
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Admin, Employee")]
+@model WebsiteDV.Pages.Administration.AllCustomersModel
+@{
+	ViewData["Title"] = "User Administration";
+}
+<head>
+	<link rel="stylesheet" href="~/css/useradmin.css" asp-append-version="true" />
+</head>
+<h2>Dyreværnets Kunder</h2>
+
+<div class="user-cards two-column">
+	@foreach (var user in Model.Users)
+	{
+		<div class="user-card">
+			<p><strong>Name:</strong> @user.Name</p>
+			<p><strong>Email:</strong> @user.Email</p>
+			<p><strong>User Type:</strong> @user.Type</p>
+			<form method="get" action="/Administration/EditUser/@user.UserID" style="display:inline;">
+				<button type="submit">Edit</button>
+			</form>
+			<form method="post" asp-page-handler="Delete" style="display:inline;">
+				<input type="hidden" name="userId" value="@user.UserID" />
+				<button type="submit" onclick="return confirm('Er du sikker på du vil slette denne bruger?');">Delete</button>
+			</form>
+		</div>
+	}
+</div>
