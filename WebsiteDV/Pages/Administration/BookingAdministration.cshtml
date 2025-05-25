@@ -4,3 +4,32 @@
 @model WebsiteDV.Pages.Administration.BookingAdministrationModel
 @{
 }
+<head>
+    <meta charset="UTF-8">
+    <title>Animals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</head>
+
+
+<div class="container-fluid align-conntent-center">
+    <h1 class="mt-5">Aktiviteter</h1>
+    <div class="row row-cols-2">
+        @foreach (var booking in Model.Bookings)
+        {
+            <div class="col">
+                <div class="card m-1">
+                    <div class="card-body">
+                        <p class="card-title">@booking.Date kl. @booking.Hour</p>
+                        <p class="card-header">Bruger ID: @booking.UserID besøger: @booking.AnimalID</p>
+                        <p class="card-text">@booking.Comment</p>
+                        <form method="post" asp-page-handler="Delete">
+                            <input type="hidden" asp-for="ToDelete" value="@booking.BookingID" />
+                            <button class="btn btn-danger" type="submit" onclick="return confirm('Er du sikker på denne booking skal slettes?');">Delete Booking</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
