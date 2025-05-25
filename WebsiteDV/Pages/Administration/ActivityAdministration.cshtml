@@ -13,16 +13,57 @@
     <link rel="stylesheet" href="~/css/StyleSheet.css" />
 </head>
 
-<body>
-    <div class="container">
-        <div class="card">
-            <div class="card__bg">
-                <div class="card-body">
-                    <p>
-                        ACTIVITYACTIVITYACTIVITYACTIVITYACTIVITY
-                    </p>
+<body class="m-1">
+    <h2>Create New Activity</h2>
+    <div id="create-form" class="m-1">
+    <form method="post" asp-page-handler="Create">
+        <div>
+            <label>Title:</label>
+            <input asp-for="Title" />
+        </div>
+        <div>
+            <label>Date:</label>
+            <input asp-for="Date" type="date"/>
+        </div>
+        <div>
+            <label>Starts at:</label>
+            <input asp-for="StartHour" type="number" />
+        </div>
+        <div>
+            <label>Ends at:</label>
+            <input asp-for="EndHour" type="number" />
+        </div>
+        <div>
+            <label>Text:</label>
+            <input asp-for="Text" type="text"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Create Activity</button>
+        @* <div style="color:red">@Model.ErrorMessage</div>
+        <div style="color:green">@Model.SuccessMessage</div> *@
+    </form>
+    </div>
+
+
+    <div class="container-fluid align-conntent-center">
+        <h1 class="mt-5">Aktiviteter</h1>
+        <div class="row row-cols-2">
+        @foreach (var activity in Model.Activities)
+        {
+            <div class="col">    
+                <div class="card ">
+                    <div class="card-body">
+                        <p class="card-title">@activity.ActivityTitle</p>
+                        <p class="card-header">@activity.Date   kl. @activity.StartHour til @activity.EndHour</p>
+                        <p class="card-text">@activity.Text</p>
+                        <form method="post" asp-page-handler="Delete">
+                            <input type="hidden" asp-for="ToDelete" value="@activity.ActivityID"/>
+                            <button class="btn btn-danger" type="submit" onclick="return confirm('Er du sikker på denne aktivitet skal slettes?');" >Delete Activity</button>
+                        </form>
+                    </div>
                 </div>
             </div>
+        }
         </div>
+    </div>
 </body>
 </html>
