@@ -8,8 +8,8 @@ namespace WebsiteDV.Pages.Administration
 {
     public class BookingAdministrationModel : PageModel
     {
-        IBookingRepo _bookingRepo = new BookingRepo();
-        BookingService _bookingService;
+        private readonly IBookingRepo _bookingRepo = new BookingRepo();
+        private readonly BookingService _bookingService;
 
         [BindProperty]
         public List<Booking> Bookings { get; set; }
@@ -21,7 +21,7 @@ namespace WebsiteDV.Pages.Administration
             _bookingRepo = bookingRepo;
             _bookingService = new BookingService(_bookingRepo);
         }
-        public void OnGet(IBookingRepo bookingRepo)
+        public void OnGet()
         {
             Bookings = _bookingService.GetAllBookings();
         }
