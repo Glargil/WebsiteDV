@@ -1,4 +1,24 @@
 ﻿@page
 @model WebsiteDV.Pages.Administration.EditCustomerModel
 @{
+    ViewData["Title"] = "Edit Customer";
 }
+<h2>Edit Customer</h2>
+<form method="post">
+    <input type="hidden" asp-for="UserID" />
+    <div>
+        <label>Name:</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input asp-for="Email" type="email" />
+    </div>
+    <div>
+        <label>Phone Number:</label>
+        <input asp-for="PhoneNumber" />
+    </div>
+    <button type="submit">Save Changes</button>
+    <div style="color:red">@Model.ErrorMessage</div>
+    <div style="color:green">@Model.SuccessMessage</div>
+</form>
