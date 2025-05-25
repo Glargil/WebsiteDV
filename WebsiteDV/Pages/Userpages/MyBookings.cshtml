@@ -1,0 +1,39 @@
+﻿@page
+@model WebsiteDV.Pages.Userpages.MyBookingsModel
+@{
+}
+<head>
+	<link href="~/css/site.css" rel="stylesheet" />
+</head>
+<section id="mybookings-section">
+    <h2 class="mybookings-title">Mine Tider</h2>
+    <form method="post" id="mybookings-form">
+        <label for="email" class="mybookings-label">Indtast din email:</label>
+        <input asp-for="Email" type="email" id="email" class="mybookings-input" required />
+        <button type="submit" class="mybookings-btn">Se mine bookinger</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="mybookings-error">@Model.ErrorMessage</div>
+    }
+    @if (Model.Bookings != null && Model.Bookings.Count > 0)
+    {
+        <div class="mybookings-list-wrapper">
+            <h3 class="mybookings-list-title">Dine bookinger:</h3>
+            <ul class="mybookings-list">
+                @foreach (var booking in Model.Bookings)
+                {
+                    <li class="mybookings-list-item">
+                        <span class="mybookings-date">Dato: @booking.Date</span>,
+                        <span class="mybookings-hour">Klokkeslæt: @booking.Hour</span>,
+                        <span class="mybookings-comment">Kommentar: @booking.Comment</span>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+    <div class="mybookings-cancel-info">
+        <strong>Ønsker du at aflyse din booking? Kontakt os venligst.</strong>
+    </div>
+</section>
