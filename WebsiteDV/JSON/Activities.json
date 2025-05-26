@@ -1,0 +1,47 @@
+[
+  {
+    "ActivityID": 1,
+    "Date": "2025-06-02",
+    "ActivityTitle": "Hundebadetur",
+    "Text": "\u003Cp\u003EVi skal ud og bade for satan -  EDITED\u003C/p\u003E",
+    "ImgPath": "imgpath",
+    "StartHour": 8,
+    "EndHour": 12
+  },
+  {
+    "ActivityID": 2,
+    "Date": "2025-06-11",
+    "ActivityTitle": "Hundebadetur",
+    "Text": "Vi skal ud og bade for satan",
+    "ImgPath": "imgpath",
+    "StartHour": 8,
+    "EndHour": 12
+  },
+  {
+    "ActivityID": 3,
+    "Date": "2025-06-25",
+    "ActivityTitle": "Hundebadetur",
+    "Text": "Vi skal ud og bade for satan",
+    "ImgPath": "imgpath",
+    "StartHour": 8,
+    "EndHour": 12
+  },
+  {
+    "ActivityID": 4,
+    "Date": "2025-06-18",
+    "ActivityTitle": "Hundebadetur",
+    "Text": "Vi skal ud og bade for satan",
+    "ImgPath": "imgpath",
+    "StartHour": 8,
+    "EndHour": 12
+  },
+  {
+    "ActivityID": 5,
+    "Date": "2025-07-15",
+    "ActivityTitle": "Happy Bday!",
+    "Text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam commodi tenetur ut labore dolorem. Non minus illo vel dolore aspernatur ex, eius corporis, aliquam impedit beatae maxime aut accusamus quisquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam commodi tenetur ut labore dolorem. Non minus illo vel dolore aspernatur ex, eius corporis, aliquam impedit beatae maxime aut accusamus quisquam?",
+    "ImgPath": "nope",
+    "StartHour": 1,
+    "EndHour": 23
+  }
+]

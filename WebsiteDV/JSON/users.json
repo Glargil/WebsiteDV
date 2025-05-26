@@ -1,0 +1,71 @@
+[
+  {
+    "Password": "secret",
+    "Type": 2,
+    "Name": "Alice",
+    "UserID": 1,
+    "PhoneNumber": "12345678",
+    "Email": "alice@example.com"
+  },
+  {
+    "Password": "bobskode123",
+    "Type": 2,
+    "Name": "Bob-Edited",
+    "UserID": 2,
+    "PhoneNumber": "19191919",
+    "Email": "bobmail@hejsa.dk"
+  },
+  {
+    "Password": "TestEmployee",
+    "Type": 1,
+    "Name": "Emily",
+    "UserID": 3,
+    "PhoneNumber": "18181818",
+    "Email": "emily@example.com"
+  },
+  {
+    "Password": "secret",
+    "Type": 2,
+    "Name": "Magnus",
+    "UserID": 4,
+    "PhoneNumber": "93951054",
+    "Email": "mak025@example.com"
+  },
+  {
+    "Password": "Marcus",
+    "Type": 2,
+    "Name": "Marcus",
+    "UserID": 6,
+    "PhoneNumber": "80085666",
+    "Email": "M@rc.us"
+  },
+  {
+    "Type": 0,
+    "Name": "Robert",
+    "UserID": 9,
+    "PhoneNumber": "68594279",
+    "Email": "robert@example.com"
+  },
+  {
+    "Type": 0,
+    "Name": "cus",
+    "UserID": 8,
+    "PhoneNumber": "89456025",
+    "Email": "cus@example.com"
+  },
+  {
+    "Password": "admin",
+    "Type": 2,
+    "Name": "Admin",
+    "UserID": 9,
+    "PhoneNumber": "88888888",
+    "Email": "admin@admin.com"
+  },
+  {
+    "Type": 0,
+    "Name": "tor",
+    "UserID": 10,
+    "PhoneNumber": "78945625",
+    "Email": "tor@example.com"
+  }
+]

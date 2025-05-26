@@ -1,0 +1,20 @@
+[
+  {
+    "BlogPostID": 1,
+    "Title": "Hundebadetur",
+    "ImgPath": "imgpath",
+    "Text": "Vi skal ud og bade for satan"
+  },
+  {
+    "BlogPostID": 2,
+    "Title": "Test Title 1",
+    "ImgPath": "ImgPath",
+    "Text": "Test Content"
+  },
+  {
+    "BlogPostID": 3,
+    "Title": "Test Title 2",
+    "ImgPath": "ImgPath",
+    "Text": "Test Content"
+  }
+]

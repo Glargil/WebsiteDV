@@ -1,0 +1,85 @@
+[
+    {
+        "ChipNumber": "123456789",
+        "Name": "Vita",
+        "AnimalID": 1,
+        "Type": 0,
+        "Color": "Sort",
+        "Race": "Formel 1 Labrador",
+        "Vaccines": [
+            "Jonson & Jonson"
+        ],
+        "Birthday": "2018-01-01",
+        "Weight": 25,
+        "Description": "Vita er pensioneret politihund. Hun er meget responsiv og lytter altid efter når man kalder på hende. Hun elsker at bade og skal have masser af motion hver dag. Hun er god med børn og meget stille.",
+        "Gender": "F",
+        "ImgPath": "vita.jpg",
+        "HealthLogs": {
+            "2024-05-10T14:30:00": "Updated checkup",
+            "2025-05-21T14:34:30.9757396+02:00": "Initial checkup",
+            "2025-05-21T14:37:53.4951661+02:00": "Initial checkup",
+            "2025-05-21T14:38:06.5531148+02:00": "Initial checkup",
+            "2025-05-21T14:38:25.4526933+02:00": "Initial checkup",
+            "2025-05-21T14:38:41.1280259+02:00": "Initial checkup - pre edit",
+            "2025-05-21T14:39:28.5428681+02:00": "Initial checkup - pre edit",
+            "2025-05-22T10:37:27.7175312+02:00": "Initial checkup - pre edit",
+            "2025-05-22T10:38:55.3403427+02:00": "Initial checkup - pre edit"
+        }
+    },
+    {
+        "ChipNumber": "1234517890",
+        "Name": "Garfield",
+        "AnimalID": 2,
+        "Type": 1,
+        "Color": "Orange med sorte striber",
+        "Race": "Almindelig huskat",
+        "Vaccines": [
+            "HPV"
+        ],
+        "Birthday": "2020-01-01",
+        "Weight": 43,
+        "Description": "Garfield er en reserveret kat med en stor appetit. Hans yndlingsmad er lasagne og han hader mandage.",
+        "Gender": "M",
+        "ImgPath": "Garfield.jpg",
+        "HealthLogs": {}
+    },
+    {
+        "ChipNumber": "123456782",
+        "Name": "Basse",
+        "AnimalID": 3,
+        "Type": 0,
+        "Color": "Hvid og orange",
+        "Race": "Gadekryds",
+        "Vaccines": [
+            "DHP"
+        ],
+        "Birthday": "2017-04-03",
+        "Weight": 20,
+        "Description": "Hvis du ikke har noget imod en hund med et stærkt temperament og en tendens til at urinere indenfor, så er Basse lige hunden for dig. Vi har passet Basse i snart to år og han har tisset og skidt på gulvet hver eneste dag. Please. Adoptér ham.",
+        "Gender": "M",
+        "ImgPath": "basse.jpg",
+        "HealthLogs": {
+            "2024-05-10T14:30:00": "Routine checkup",
+            "2025-05-21T14:34:30.9757396+02:00": "Routine checkup"
+        }
+    },
+    {
+        "ChipNumber": "134456784",
+        "Name": "Herman",
+        "AnimalID": 4,
+        "Type": 1,
+        "Color": "",
+        "Race": "Balinesisk",
+        "Vaccines": [
+            "FVRCP"
+        ],
+        "Birthday": "2016-06-06",
+        "Weight": 19,
+        "Description": "Efterladt af sin mor i Rold Skov, Herman blev fundet af en forbigående hundelufter. Seks dage senere blev hundelufteren fundet død i sin lejlighed. Kvalt i en hårbolle. Der er aldrig nogen som har set Herman sove eller spise. Herman overvåger os dag og nat. Må gud benåde os.",
+        "Gender": "M",
+        "ImgPath": "Herman.jpg",
+        "HealthLogs": {
+            "2024-05-10T14:30:00": "Djævlefordrivelses ceremoni"
+        }
+    }
+]

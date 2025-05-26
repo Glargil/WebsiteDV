@@ -38,7 +38,7 @@
 							<span class="activity-date">@activity.Date.ToString("dd-MM-yyyy")</span>
 							<span class="activity-time">kl. @activity.StartHour:00 - @activity.EndHour:00</span>
 						</div>
-						<p class="card-text">@activity.Text</p>
+						<p class="card-text">@Html.Raw(activity.Text)</p>
 					</div>
 				</div>
 			}

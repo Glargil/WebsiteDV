@@ -1,0 +1,58 @@
+[
+  {
+    "UserID": 3,
+    "AnimalID": 2,
+    "Date": "2025-06-01",
+    "Hour": 10,
+    "BookingID": 1,
+    "Comment": "zopjibsgtdukysvbtr"
+  },
+  {
+    "UserID": 1,
+    "AnimalID": 2,
+    "Date": "2025-05-22",
+    "Hour": 14,
+    "BookingID": 2,
+    "Comment": "Buller 2.0 ftw"
+  },
+  {
+    "UserID": 4,
+    "AnimalID": 2,
+    "Date": "2025-05-22",
+    "Hour": 15,
+    "BookingID": 3,
+    "Comment": "Buller 2.0 ftw"
+  },
+  {
+    "UserID": 3,
+    "AnimalID": 2,
+    "Date": "2025-05-22",
+    "Hour": 10,
+    "BookingID": 4,
+    "Comment": "Buller 2.0 ftw"
+  },
+  {
+    "UserID": 9,
+    "AnimalID": 2,
+    "Date": "2025-05-25",
+    "Hour": 15,
+    "BookingID": 5,
+    "Comment": "Ingen Kommentar"
+  },
+  {
+    "UserID": 8,
+    "AnimalID": 2,
+    "Date": "2025-05-25",
+    "Hour": 12,
+    "BookingID": 6,
+    "Comment": ""
+  },
+  {
+    "UserID": 10,
+    "AnimalID": 2,
+    "Date": "2025-05-25",
+    "Hour": 12,
+    "BookingID": 7,
+    "Comment": ""
+  }
+]
